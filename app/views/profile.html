@@ -1,0 +1,20 @@
+{% extends 'layout.html' %}
+
+{% block title %}Profile{% endblock %}
+
+{% block content %}
+<div class="container my-4">
+    <h1 class="text-center mb-4">Profile Page</h1>
+    <div class="card">
+        <div class="card-body">
+            <h3 class="card-title">{{ user.fullname }}</h3>
+            <p class="card-text"><strong>Username:</strong> {{ user.username }}</p>
+            <p class="card-text"><strong>Email:</strong> {{ user.email }}</p>
+            <p class="card-text"><strong>User Type:</strong> {{ user.user_type }}</p>
+        </div>
+        <div class="card-footer">
+            <a href="{{ url_for('auth.update_password') }}" class="btn btn-success">Update Password</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
